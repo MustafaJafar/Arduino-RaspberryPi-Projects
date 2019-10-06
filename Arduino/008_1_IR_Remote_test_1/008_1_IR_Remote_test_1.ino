@@ -23,9 +23,7 @@ void setup (){
 
 void loop  (){
   if (irrecv.decode(&result)) {
-
     do_something(result.value);//write your code inside the function !
-    
     irrecv.resume(); // Receive the next value
   }
   }

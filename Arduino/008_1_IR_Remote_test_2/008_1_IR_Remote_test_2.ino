@@ -24,19 +24,15 @@ void setup (){
 
 
 
-void loop  (){
+void loop(){
   if (irrecv.decode(&result)) {
-
-    button_name = return_button(result.value);
-    Serial.println(button_name);
-    
-    if (button_name == "CH-"){
-      Serial.println("Hello");
-      }
-    
+    button_name = return_button(result.value); 
     irrecv.resume(); // Receive the next value
   }
-  }
+    Serial.println(button_name);
+    if (button_name == "CH-")
+    {Serial.println("Hello");}
+}
 
 
 void setup_receiver(){
