@@ -1,3 +1,8 @@
+/*
+ * CH+ : Next Color 
+ * CH- : Last Color
+ * 0 to 7 : colors 
+ */
 #include <IRremote.h>
 #include "IRcode.h"
 
