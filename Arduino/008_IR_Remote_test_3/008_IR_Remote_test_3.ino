@@ -1,37 +1,54 @@
+/*
+ * this code prints buttons name 
+ * and print "Hello" if CH- pressed
+ * See how it works !
+ * This code is easier to understand
+ * and modify but more code
+ */
 #include <IRremote.h>
 #include "IRcode.h"
 
 #define RECV_PIN  3
-
-
 IRrecv irrecv(RECV_PIN);
-
 decode_results result;
-  
+
+String button_name ="" ; 
 
 void setup (){
 
   Serial.begin(9600);
-  
-  Serial.println("Enabling IRin");
-  irrecv.enableIRIn(); // Start the receiver
-  Serial.println("Enabled IRin");
+
+  setup_receiver();
   
   }
+
+
 
 void loop  (){
   if (irrecv.decode(&result)) {
 
-    Serial.println(return_button(result.value));
-    //Continue your code here
+    button_name = return_button(result.value);
+    Serial.println(button_name);
+    
+    if (button_name == "CH-"){
+      Serial.println("Hello");
+      }
     
     irrecv.resume(); // Receive the next value
   }
   }
+
+
+void setup_receiver(){
+  
+  Serial.println("Enabling IRin");
+  irrecv.enableIRIn(); // Start the receiver
+  Serial.println("Enabled IRin");
+}
   
 String return_button(unsigned int value){
  switch(value) {
-  case StillPressed : 
+  case StillPressed :   
     return "StillPressed";  
     break;
     

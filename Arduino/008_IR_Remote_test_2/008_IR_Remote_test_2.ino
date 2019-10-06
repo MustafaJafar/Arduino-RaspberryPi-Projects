@@ -1,21 +1,23 @@
+/*
+ * this code prints buttons name 
+ * and print "Hello" if CH- pressed
+ * See how it works !
+ * this code is alittle harder to understad
+ * and modify but faster and less code
+ */
 #include <IRremote.h>
 #include "IRcode.h"
 
 #define RECV_PIN  3
-
-
 IRrecv irrecv(RECV_PIN);
-
 decode_results result;
   
 
 void setup (){
 
   Serial.begin(9600);
-  
-  Serial.println("Enabling IRin");
-  irrecv.enableIRIn(); // Start the receiver
-  Serial.println("Enabled IRin");
+
+  setup_receiver();
   
   }
 
@@ -27,7 +29,14 @@ void loop  (){
     irrecv.resume(); // Receive the next value
   }
   }
+
+void setup_receiver(){
   
+  Serial.println("Enabling IRin");
+  irrecv.enableIRIn(); // Start the receiver
+  Serial.println("Enabled IRin");
+}
+
 void do_something(unsigned int value){
  switch(value) {
   case StillPressed : 
@@ -35,7 +44,8 @@ void do_something(unsigned int value){
     break;
     
   case C_CHm : 
-    Serial.println("CH-");  
+    Serial.println("CH-"); 
+    Serial.println("Hello");
     break;
   case C_CH : 
     Serial.println("CH");  
