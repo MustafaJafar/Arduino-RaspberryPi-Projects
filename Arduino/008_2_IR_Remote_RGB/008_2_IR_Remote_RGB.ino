@@ -1,7 +1,10 @@
 /*
  * CH+ : Next Color 
  * CH- : Last Color
- * 0 to 7 : colors 
+ * 0 to 7 : RGB Colors 
+ * --------------------------------------
+ * This code is more like the first test 
+ * 008_1_IR_Remote_test_1
  */
 #include <IRremote.h>
 #include "IRcode.h"

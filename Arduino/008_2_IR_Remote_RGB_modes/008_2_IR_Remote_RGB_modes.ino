@@ -1,3 +1,12 @@
+/*
+ * CH+ : Next Color 
+ * CH- : Last Color
+ * 0 to 7 : RGB Colors 
+ * EQ : Change Mode "Flaser Mode"
+ * --------------------------------------
+ * This code is more like the second test 
+ * 008_1_IR_Remote_test_2
+ */
 #include <IRremote.h>
 #include "IRcode.h"
 
@@ -11,6 +20,7 @@ decode_results result;
 
 int color_num = 0 ; 
 bool mode = false ; 
+
 String colors[8] = {"None" , "Red", "Green" , "Blue" ,"Yellow" , "Cyan" , "Purple","White" }; 
 
 void setup (){
