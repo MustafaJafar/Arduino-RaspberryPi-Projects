@@ -1,5 +1,3 @@
-//-------------------------
-//Motor Set Speed Variables
 #define mf 5
 #define mb 6
 
